@@ -3,463 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Shara Mae Reyes | AI Content Creator & Digital Product Designer</title>
-
-  <meta
-    name="description"
-    content="Portfolio of Shara Mae Reyes, an AI Content Creator and Digital Product Designer specializing in AI-generated product images, educational printables, Canva design, and tutorial content."
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
+  <meta name="description" content="Portfolio of Shara Mae Reyes, a Digital Content Creator specializing in Canva design, digital products, educational resources, software tutorials, documentation, and commercial visual content." />
+  <title>Shara Mae Reyes | Digital Content Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #7c5cff;
-      --primary-dark: #6544e8;
-      --secondary: #f2eeff;
-      --background: #fbfafc;
-      --surface: #ffffff;
-      --text: #25222a;
-      --muted: #6f6975;
-      --border: #e9e3ee;
-      --shadow: 0 12px 35px rgba(59, 41, 76, 0.09);
-      --radius: 18px;
+      --primary:#7357e8;
+      --primary-dark:#5a3ed0;
+      --secondary:#f0ecff;
+      --accent:#fff0f6;
+      --background:#fbfafc;
+      --surface:#ffffff;
+      --text:#24212a;
+      --muted:#6f6877;
+      --border:#e9e3ef;
+      --shadow:0 18px 50px rgba(59,41,76,.10);
+      --shadow-soft:0 8px 26px rgba(59,41,76,.06);
+      --radius:22px;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* Navigation */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav-inner {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.05rem;
-      text-decoration: none;
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    /* Hero */
-
-    .hero {
-      padding: 88px 0 70px;
-      background:
-        radial-gradient(circle at 15% 15%, #eee7ff 0, transparent 32%),
-        radial-gradient(circle at 90% 25%, #f8e8f2 0, transparent 28%);
-    }
-
-    .hero-content {
-      max-width: 850px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 15px;
-      background: var(--secondary);
-      color: var(--primary-dark);
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
-
-    h1 {
-      max-width: 920px;
-      margin: 0 auto;
-      font-size: clamp(2.5rem, 7vw, 4.8rem);
-      line-height: 1.08;
-      letter-spacing: -0.055em;
-    }
-
-    .gradient-text {
-      color: var(--primary);
-    }
-
-    .hero-description {
-      max-width: 720px;
-      margin: 24px auto 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .hero-details {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 21px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .button-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 8px 22px rgba(124, 92, 255, 0.28);
-    }
-
-    .button-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .button-secondary {
-      background: white;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .button-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    /* General sections */
-
-    section {
-      padding: 78px 0;
-    }
-
-    .section-heading {
-      max-width: 740px;
-      margin-bottom: 34px;
-    }
-
-    .section-label {
-      margin-bottom: 8px;
-      color: var(--primary);
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: clamp(1.9rem, 4vw, 2.75rem);
-      line-height: 1.2;
-      letter-spacing: -0.035em;
-    }
-
-    .section-description {
-      margin-top: 13px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    /* Canva Portfolio */
-
-    .portfolio-section {
-      padding-top: 30px;
-    }
-
-    .feature-portfolio {
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .feature-portfolio iframe {
-      display: block;
-      width: 100%;
-      height: 620px;
-      border: none;
-    }
-
-    .portfolio-link {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    /* Cards */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      height: 100%;
-      padding: 27px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 6px 20px rgba(59, 41, 76, 0.045);
-      transition: 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .card-icon {
-      margin-bottom: 17px;
-      font-size: 1.9rem;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.12rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    /* Skills and tools */
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 9px 13px;
-      background: white;
-      color: #4e4854;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .skills-section {
-      background: #f7f4fa;
-    }
-
-    /* Experience */
-
-    .experience-list {
-      display: grid;
-      gap: 15px;
-    }
-
-    .experience-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 20px 22px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-    }
-
-    .check {
-      flex: 0 0 auto;
-      display: grid;
-      width: 27px;
-      height: 27px;
-      place-items: center;
-      background: var(--secondary);
-      color: var(--primary);
-      border-radius: 50%;
-      font-weight: 800;
-    }
-
-    .experience-item p {
-      color: var(--muted);
-    }
-
-    .experience-item strong {
-      color: var(--text);
-    }
-
-    /* Contact CTA */
-
-    .contact-card {
-      padding: 55px 35px;
-      background:
-        linear-gradient(135deg, rgba(124, 92, 255, 0.96), rgba(101, 68, 232, 0.96));
-      color: white;
-      border-radius: 25px;
-      text-align: center;
-      box-shadow: 0 18px 45px rgba(87, 57, 190, 0.25);
-    }
-
-    .contact-card h2 {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .contact-card p {
-      max-width: 660px;
-      margin: 16px auto 0;
-      color: rgba(255, 255, 255, 0.86);
-    }
-
-    .contact-card .hero-buttons {
-      margin-top: 27px;
-    }
-
-    .contact-card .button-secondary {
-      border: 0;
-    }
-
-    /* Footer */
-
-    footer {
-      padding: 30px 0 40px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 850px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links a:not(.nav-contact) {
-        display: none;
-      }
-
-      .feature-portfolio iframe {
-        height: 500px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 24px, 1120px);
-      }
-
-      .hero {
-        padding: 65px 0 55px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 58px 0;
-      }
-
-      .feature-portfolio iframe {
-        height: 420px;
-      }
-
-      .contact-card {
-        padding: 42px 20px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Inter",sans-serif;background:var(--background);color:var(--text);line-height:1.7}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
+    .nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{font-size:1.05rem;font-weight:800;text-decoration:none;letter-spacing:-.02em}.logo span{color:var(--primary)}
+    .nav-links{display:flex;align-items:center;gap:24px}.nav-links a{text-decoration:none;color:var(--muted);font-size:.91rem;font-weight:700}.nav-links a:hover{color:var(--primary)}
+    .hero{padding:92px 0 78px;background:radial-gradient(circle at 12% 15%,#ece6ff 0,transparent 31%),radial-gradient(circle at 89% 20%,#ffe8f2 0,transparent 27%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:54px}
+    .eyebrow{display:inline-block;margin-bottom:20px;padding:8px 15px;border-radius:999px;background:var(--secondary);color:var(--primary-dark);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+    h1{font-size:clamp(2.8rem,6vw,5.25rem);line-height:1.03;letter-spacing:-.06em;max-width:760px}
+    .gradient-text{color:var(--primary)}
+    .hero-description{max-width:720px;margin-top:25px;color:var(--muted);font-size:1.08rem}
+    .hero-details{margin-top:17px;color:var(--muted);font-size:.94rem}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:11px;text-decoration:none;font-weight:800;transition:.2s ease}
+    .button-primary{background:var(--primary);color:white;box-shadow:0 9px 24px rgba(115,87,232,.28)}.button-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+    .button-secondary{background:white;border:1px solid var(--border)}.button-secondary:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+    .hero-panel{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .mini-card{min-height:135px;padding:20px;border-radius:18px;border:1px solid var(--border);background:white;display:flex;flex-direction:column;justify-content:space-between}
+    .mini-card:nth-child(2){background:#fff7fb}.mini-card:nth-child(3){background:#f6f3ff}.mini-card:nth-child(4){background:#f8fbff}
+    .mini-icon{font-size:1.85rem}.mini-card strong{font-size:.96rem}.mini-card span{color:var(--muted);font-size:.78rem}
+    section{padding:80px 0}.alt{background:#f7f4fa}
+    .section-heading{max-width:780px;margin-bottom:36px}.section-label{margin-bottom:8px;color:var(--primary);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;letter-spacing:-.04em}.section-description{margin-top:13px;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-32px;position:relative;z-index:2}
+    .stat{background:white;border:1px solid var(--border);border-radius:18px;padding:24px;text-align:center;box-shadow:var(--shadow-soft)}
+    .stat strong{display:block;color:var(--primary);font-size:1.8rem;line-height:1.1}.stat span{display:block;margin-top:7px;color:var(--muted);font-size:.88rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .project-card{display:flex;flex-direction:column;min-height:280px;padding:30px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-soft);transition:.22s ease}
+    .project-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .project-card.featured{grid-column:span 2;background:linear-gradient(135deg,#ffffff,#f5f1ff)}
+    .project-top{display:flex;align-items:center;justify-content:space-between;gap:15px}.project-icon{font-size:2.15rem}.project-tag{padding:7px 11px;border-radius:999px;background:var(--secondary);color:var(--primary-dark);font-size:.75rem;font-weight:800}
+    .project-card h3{font-size:1.35rem;margin-top:25px;letter-spacing:-.025em}.project-card p{margin-top:10px;color:var(--muted)}
+    .project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:24px}.text-link{text-decoration:none;color:var(--primary);font-weight:800}.text-link:hover{text-decoration:underline}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{height:100%;padding:28px;background:white;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-soft)}
+    .card-icon{font-size:1.9rem;margin-bottom:17px}.card h3{margin-bottom:10px;font-size:1.13rem}.card p{color:var(--muted);font-size:.93rem}
+    .skill-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill-group{padding:23px;background:white;border:1px solid var(--border);border-radius:18px}.skill-group h3{font-size:1rem;margin-bottom:14px}.skill-group ul{list-style:none}.skill-group li{padding:5px 0;color:var(--muted);font-size:.9rem}
+    .experience-list{display:grid;gap:14px}.experience-item{display:flex;gap:14px;padding:20px 22px;background:white;border:1px solid var(--border);border-radius:14px}.check{flex:0 0 auto;display:grid;width:28px;height:28px;place-items:center;border-radius:50%;background:var(--secondary);color:var(--primary);font-weight:900}.experience-item p{color:var(--muted)}.experience-item strong{color:var(--text)}
+    .tags{display:flex;flex-wrap:wrap;gap:10px}.tag{padding:9px 13px;border:1px solid var(--border);border-radius:999px;background:white;color:#4f4956;font-size:.87rem;font-weight:700}
+    .contact-card{padding:58px 38px;border-radius:28px;text-align:center;color:white;background:linear-gradient(135deg,#795ce9,#593ad0);box-shadow:0 20px 48px rgba(87,57,190,.26)}
+    .contact-card h2{max-width:760px;margin:auto}.contact-card p{max-width:680px;margin:16px auto 0;color:rgba(255,255,255,.87)}.contact-card .hero-buttons{justify-content:center}.contact-card .button-secondary{border:0}
+    footer{padding:30px 0 42px;text-align:center;color:var(--muted);font-size:.88rem}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-panel{max-width:650px}.service-grid{grid-template-columns:repeat(2,1fr)}.skill-groups{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.nav-links a:not(.nav-contact){display:none}}
+    @media(max-width:620px){.container{width:min(100% - 24px,1160px)}.hero{padding:66px 0 56px}section{padding:60px 0}.mini-grid,.project-grid,.service-grid,.skill-groups,.stats{grid-template-columns:1fr}.project-card.featured{grid-column:span 1}.hero-buttons{flex-direction:column}.button{width:100%}.contact-card{padding:44px 20px}}
   </style>
 </head>
-
 <body>
-
-  <!-- NAVIGATION -->
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">
-        Shara Mae <span>Reyes</span>
-      </a>
-
+      <a href="#" class="logo">Shara Mae <span>Reyes</span></a>
       <div class="nav-links">
-        <a href="#portfolio">Portfolio</a>
+        <a href="#work">Featured Work</a>
         <a href="#services">Services</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
@@ -468,345 +88,155 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
-    <div class="container hero-content">
-
-      <span class="eyebrow">
-        AI Content Creator • Digital Product Designer
-      </span>
-
-      <h1>
-        Creating realistic visuals and
-        <span class="gradient-text">digital content</span>
-        with AI.
-      </h1>
-
-      <p class="hero-description">
-        I create AI-generated product images, lifestyle visuals, educational
-        printables, Canva designs, and clear step-by-step tutorial content for
-        eCommerce brands, content teams, and online businesses.
-      </p>
-
-      <p class="hero-details">
-        Based in the Philippines • Available for part-time, full-time, and
-        project-based opportunities
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#portfolio" class="button button-primary">
-          View My Work
-        </a>
-
-        <a
-          href="Reyes,%20Shara%20Mae%20L.%20Resume.pdf"
-          target="_blank"
-          class="button button-secondary"
-        >
-          View Resume
-        </a>
-
-        <a
-          href="mailto:shrmreyes@gmail.com"
-          class="button button-secondary"
-        >
-          Contact Me
-        </a>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Digital Content Creator</span>
+        <h1>Ideas turned into <span class="gradient-text">useful digital content.</span></h1>
+        <p class="hero-description">I create Canva designs, educational workbooks, printable resources, commercial product visuals, software tutorials, and step-by-step documentation for businesses, creators, and online brands.</p>
+        <p class="hero-details">Based in the Philippines • Available for remote, part-time, full-time, and project-based opportunities</p>
+        <div class="hero-buttons">
+          <a href="#work" class="button button-primary">View My Work</a>
+          <a href="Reyes,%20Shara%20Mae%20L.%20Resume.pdf" target="_blank" class="button button-secondary">View Resume</a>
+          <a href="mailto:shrmreyes@gmail.com" class="button button-secondary">Contact Me</a>
+        </div>
       </div>
-
+      <div class="hero-panel" aria-label="Creative work overview">
+        <div class="mini-grid">
+          <div class="mini-card"><div class="mini-icon">📚</div><div><strong>Educational Products</strong><br><span>Workbooks, phonics, activities</span></div></div>
+          <div class="mini-card"><div class="mini-icon">🎨</div><div><strong>Canva Design</strong><br><span>Layouts, presentations, printables</span></div></div>
+          <div class="mini-card"><div class="mini-icon">💻</div><div><strong>Tutorial Content</strong><br><span>Screen recordings and guides</span></div></div>
+          <div class="mini-card"><div class="mini-icon">📸</div><div><strong>Commercial Visuals</strong><br><span>Product and lifestyle content</span></div></div>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
+    <div class="container stats" aria-label="Portfolio highlights">
+      <div class="stat"><strong>100+</strong><span>Educational pages created</span></div>
+      <div class="stat"><strong>5+</strong><span>Software platforms documented</span></div>
+      <div class="stat"><strong>3</strong><span>Kids workbook collections</span></div>
+      <div class="stat"><strong>Multi-skill</strong><span>Design, tutorials, visuals, and content</span></div>
+    </div>
 
-    <!-- FEATURED PORTFOLIO -->
-    <section class="portfolio-section" id="portfolio">
+    <section id="work">
       <div class="container">
-
         <div class="section-heading">
-          <p class="section-label">Featured Portfolio</p>
-
-          <h2>Selected creative projects</h2>
-
-          <p class="section-description">
-            A collection of AI-generated product imagery, digital products,
-            educational printables, Canva designs, and creative content.
-          </p>
+          <p class="section-label">Featured Work</p>
+          <h2>Selected projects across design, education, tutorials, and visual content</h2>
+          <p class="section-description">Explore complete project collections based on the type of work most relevant to your needs.</p>
         </div>
 
-        <div class="feature-portfolio">
-          <iframe
-            loading="lazy"
-            src="https://www.canva.com/design/DAFu_x0kJXs/XvwdW3bfNZDEHlzEKCgoKw/view?embed"
-            allowfullscreen="allowfullscreen"
-            allow="fullscreen"
-            title="Shara Mae Reyes Creative Portfolio"
-          ></iframe>
-        </div>
-
-        <div class="portfolio-link">
-          <a
-            href="https://www.canva.com/design/DAFu_x0kJXs/XvwdW3bfNZDEHlzEKCgoKw/view?utm_content=DAFu_x0kJXs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks"
-            target="_blank"
-            class="button button-primary"
-          >
-            Open Fullscreen Portfolio
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="container">
-
-        <div class="section-heading">
-          <p class="section-label">What I Create</p>
-
-          <h2>Creative services for digital brands and content teams</h2>
-
-          <p class="section-description">
-            I combine AI generation, Canva design, research, and content
-            production to create useful and visually engaging digital assets.
-          </p>
-        </div>
-
-        <div class="grid">
-
-          <article class="card">
-            <div class="card-icon">✨</div>
-            <h3>AI Product Images</h3>
-            <p>
-              Realistic eCommerce visuals, white-background product images,
-              product-in-use scenes, lifestyle images, and advertising concepts.
-            </p>
+        <div class="project-grid">
+          <article class="project-card featured">
+            <div class="project-top"><span class="project-icon">✨</span><span class="project-tag">Main Portfolio</span></div>
+            <h3>Creative Content Portfolio</h3>
+            <p>A curated collection of commercial product visuals, Canva designs, educational printables, digital products, and tutorial content.</p>
+            <div class="project-links">
+              <a class="button button-primary" href="https://www.canva.com/design/DAFu_x0kJXs/XvwdW3bfNZDEHlzEKCgoKw/view?utm_content=DAFu_x0kJXs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks" target="_blank" rel="noopener">Open Full Portfolio</a>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">👗</div>
-            <h3>AI Fashion Visuals</h3>
-            <p>
-              Product-on-model imagery, fashion campaign concepts, editorial
-              visuals, styling variations, and branded lifestyle scenes.
-            </p>
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon">🔤</span><span class="project-tag">Kids Education</span></div>
+            <h3>Alphabet Learning Workbook</h3>
+            <p>A child-friendly workbook designed to support letter recognition, early reading, and guided learning through clear Canva layouts.</p>
+            <div class="project-links"><a class="text-link" href="https://canva.link/yx2tl5edkh4kgsl" target="_blank" rel="noopener">View Workbook →</a></div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">📚</div>
-            <h3>Digital Products</h3>
-            <p>
-              Educational workbooks, printable activity sheets, alphabet and
-              phonics materials, coloring books, and downloadable resources.
-            </p>
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon">🧠</span><span class="project-tag">Printable Resource</span></div>
+            <h3>Kids Activity Workbook</h3>
+            <p>An educational activity collection created for young learners, combining engaging exercises with organized and print-ready design.</p>
+            <div class="project-links"><a class="text-link" href="https://canva.link/gwkwiywtxo2p5ou" target="_blank" rel="noopener">View Workbook →</a></div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🎨</div>
-            <h3>Canva Design</h3>
-            <p>
-              Product presentations, printable layouts, social content,
-              portfolio pages, thumbnails, and branded visual materials.
-            </p>
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon">🖍️</span><span class="project-tag">Creative Learning</span></div>
+            <h3>Children's Printable Collection</h3>
+            <p>A Canva-designed learning resource featuring kid-friendly visuals, structured pages, and content suitable for home or classroom use.</p>
+            <div class="project-links"><a class="text-link" href="https://canva.link/e91gzvz1h9n5qva" target="_blank" rel="noopener">View Collection →</a></div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🎥</div>
-            <h3>Tutorial Content</h3>
-            <p>
-              Clear screen-recorded tutorials for apps, software, websites, and
-              digital tools, from research and recording to basic editing.
-            </p>
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon">🎥</span><span class="project-tag">Documentation</span></div>
+            <h3>Software Tutorials & Guides</h3>
+            <p>Step-by-step tutorial production for CapCut, Webex, Pipedrive, Indeed, Zoho Books, and other digital platforms.</p>
+            <div class="project-links"><a class="text-link" href="#experience">See Experience →</a></div>
           </article>
-
-          <article class="card">
-            <div class="card-icon">🧩</div>
-            <h3>Creative Support</h3>
-            <p>
-              Prompt writing, reference research, image selection, revisions,
-              quality checks, file organization, and repeatable content workflows.
-            </p>
-          </article>
-
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="skills-section" id="skills">
+    <section id="services" class="alt">
       <div class="container">
-
         <div class="section-heading">
-          <p class="section-label">Core Skills</p>
-
-          <h2>Creative and production capabilities</h2>
+          <p class="section-label">Services</p>
+          <h2>Creative production for brands, teams, and educational projects</h2>
+          <p class="section-description">From first concept to organized final files, I support structured and repeatable digital content production.</p>
         </div>
+        <div class="service-grid">
+          <article class="card"><div class="card-icon">📚</div><h3>Educational Digital Products</h3><p>Workbooks, alphabet and phonics materials, activity sheets, coloring pages, and downloadable learning resources.</p></article>
+          <article class="card"><div class="card-icon">🎨</div><h3>Canva Design</h3><p>Presentations, printable layouts, portfolio pages, social content, thumbnails, product materials, and branded assets.</p></article>
+          <article class="card"><div class="card-icon">💻</div><h3>Software Tutorials</h3><p>Clear screen-recorded tutorials for websites, apps, and business tools, including research, recording, and basic editing.</p></article>
+          <article class="card"><div class="card-icon">📄</div><h3>Documentation & Guides</h3><p>Step-by-step instructions, SOPs, knowledge-base content, user guides, and structured written documentation.</p></article>
+          <article class="card"><div class="card-icon">📸</div><h3>Commercial Visual Content</h3><p>Product images, lifestyle scenes, eCommerce visuals, advertising concepts, and creative image variations.</p></article>
+          <article class="card"><div class="card-icon">🧩</div><h3>Creative Production Support</h3><p>Research, asset preparation, revisions, quality checks, file organization, and repeatable output-based workflows.</p></article>
+        </div>
+      </div>
+    </section>
 
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading"><p class="section-label">Skills</p><h2>Creative and production capabilities</h2></div>
+        <div class="skill-groups">
+          <div class="skill-group"><h3>Design</h3><ul><li>Canva Design</li><li>Layout Design</li><li>Presentation Design</li><li>Printable Design</li><li>Digital Product Design</li></ul></div>
+          <div class="skill-group"><h3>Content Creation</h3><ul><li>Tutorial Production</li><li>Screen Recording</li><li>Documentation</li><li>SOP Creation</li><li>Educational Content</li></ul></div>
+          <div class="skill-group"><h3>Visual Production</h3><ul><li>Product Visuals</li><li>Lifestyle Images</li><li>Image Generation</li><li>Prompt Writing</li><li>Basic Video Editing</li></ul></div>
+          <div class="skill-group"><h3>Workflow</h3><ul><li>Content Research</li><li>Quality Control</li><li>File Organization</li><li>Following Brand Guidelines</li><li>High-volume Production</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="container">
+        <div class="section-heading"><p class="section-label">Tools</p><h2>Platforms I work with</h2></div>
         <div class="tags">
-          <span class="tag">AI Image Generation</span>
-          <span class="tag">Product Image Creation</span>
-          <span class="tag">Prompt Writing</span>
-          <span class="tag">Product Consistency</span>
-          <span class="tag">Lifestyle Image Creation</span>
-          <span class="tag">Fashion Visuals</span>
-          <span class="tag">Canva Design</span>
-          <span class="tag">Digital Product Design</span>
-          <span class="tag">Educational Printables</span>
-          <span class="tag">Tutorial Video Creation</span>
-          <span class="tag">Screen Recording</span>
-          <span class="tag">Basic Video Editing</span>
-          <span class="tag">Content Research</span>
-          <span class="tag">SOP Creation</span>
-          <span class="tag">Quality Control</span>
-          <span class="tag">File Organization</span>
+          <span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag">OBS Studio</span><span class="tag">Dubble</span><span class="tag">Google Workspace</span><span class="tag">Trello</span><span class="tag">ClickUp</span><span class="tag">Slack</span><span class="tag">Webex</span><span class="tag">Pipedrive</span><span class="tag">Zoho Books</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span><span class="tag">Nano Banana Pro</span>
         </div>
-
       </div>
     </section>
 
-    <!-- TOOLS -->
-    <section>
+    <section id="experience">
       <div class="container">
-
-        <div class="section-heading">
-          <p class="section-label">Tools</p>
-
-          <h2>Platforms I work with</h2>
-        </div>
-
-        <div class="tags">
-          <span class="tag">ChatGPT Images</span>
-          <span class="tag">Gemini</span>
-          <span class="tag">Nano Banana Pro</span>
-          <span class="tag">Canva</span>
-          <span class="tag">CapCut</span>
-          <span class="tag">OBS Studio</span>
-          <span class="tag">Dubble</span>
-          <span class="tag">Google Workspace</span>
-          <span class="tag">Trello</span>
-          <span class="tag">ClickUp</span>
-          <span class="tag">Slack</span>
-          <span class="tag">Webex</span>
-          <span class="tag">Pipedrive</span>
-          <span class="tag">Zoho Books</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="skills-section" id="experience">
-      <div class="container">
-
-        <div class="section-heading">
-          <p class="section-label">Experience</p>
-
-          <h2>Selected experience highlights</h2>
-        </div>
-
+        <div class="section-heading"><p class="section-label">Experience</p><h2>Selected experience highlights</h2></div>
         <div class="experience-list">
-
-          <div class="experience-item">
-            <span class="check">✓</span>
-            <p>
-              Created more than <strong>100 pages of educational digital
-              products</strong>, including reading workbooks, alphabet and
-              phonics activities, worksheets, and coloring pages.
-            </p>
-          </div>
-
-          <div class="experience-item">
-            <span class="check">✓</span>
-            <p>
-              Produced <strong>AI-generated product and lifestyle
-              visuals</strong> using reference images, varied environments,
-              realistic lighting, and multiple camera compositions.
-            </p>
-          </div>
-
-          <div class="experience-item">
-            <span class="check">✓</span>
-            <p>
-              Created step-by-step software tutorials for
-              <strong>CapCut, Webex, Pipedrive, Indeed, Zoho Books, and other
-              digital platforms</strong>.
-            </p>
-          </div>
-
-          <div class="experience-item">
-            <span class="check">✓</span>
-            <p>
-              Experienced in researching unfamiliar tools, following client
-              instructions, recording clear demonstrations, and organizing
-              repeatable production workflows.
-            </p>
-          </div>
-
-          <div class="experience-item">
-            <span class="check">✓</span>
-            <p>
-              Comfortable working on repetitive, output-based projects that
-              require <strong>consistency, accuracy, and attention to
-              detail</strong>.
-            </p>
-          </div>
-
+          <div class="experience-item"><span class="check">✓</span><p>Designed more than <strong>100 pages of educational resources</strong>, including alphabet and phonics workbooks, reading activities, worksheets, and coloring pages.</p></div>
+          <div class="experience-item"><span class="check">✓</span><p>Created <strong>Canva presentations, printable materials, portfolio layouts, and digital assets</strong> for creative and educational projects.</p></div>
+          <div class="experience-item"><span class="check">✓</span><p>Produced <strong>step-by-step software tutorials and documentation</strong> for CapCut, Webex, Pipedrive, Indeed, Zoho Books, and other platforms.</p></div>
+          <div class="experience-item"><span class="check">✓</span><p>Created <strong>commercial product and lifestyle visuals</strong> using reference images, varied settings, realistic lighting, and multiple compositions.</p></div>
+          <div class="experience-item"><span class="check">✓</span><p>Experienced in researching unfamiliar tools, following detailed instructions, organizing assets, and delivering repetitive work with <strong>consistency and accuracy</strong>.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
-
         <div class="contact-card">
-
-          <p class="section-label" style="color: white;">
-            Let’s Work Together
-          </p>
-
-          <h2>
-            Looking for reliable creative support for your next project?
-          </h2>
-
-          <p>
-            I am available for AI image generation, eCommerce product visuals,
-            Canva design, digital products, tutorial creation, and long-term
-            creative production support.
-          </p>
-
+          <p class="section-label" style="color:white">Let's Work Together</p>
+          <h2>Need dependable creative support for your next project?</h2>
+          <p>Whether you need Canva designs, educational resources, commercial visuals, software tutorials, or ongoing digital content production, I would be glad to help.</p>
           <div class="hero-buttons">
-            <a
-              href="mailto:shrmreyes@gmail.com"
-              class="button button-secondary"
-            >
-              Email Me
-            </a>
-
-            <a
-              href="Reyes,%20Shara%20Mae%20L.%20Resume.pdf"
-              target="_blank"
-              class="button button-secondary"
-            >
-              View Resume
-            </a>
+            <a href="mailto:shrmreyes@gmail.com" class="button button-secondary">Email Me</a>
+            <a href="Reyes,%20Shara%20Mae%20L.%20Resume.pdf" target="_blank" class="button button-secondary">View Resume</a>
           </div>
-
-          <p style="margin-top: 24px; font-size: 0.9rem;">
-            shrmreyes@gmail.com &nbsp;•&nbsp; +63 994 489 4725
-          </p>
-
+          <p style="margin-top:24px;font-size:.9rem">shrmreyes@gmail.com &nbsp;•&nbsp; +63 994 489 4725</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer>
-    <div class="container">
-      © 2026 Shara Mae Reyes. AI Content Creator & Digital Product Designer.
-    </div>
-  </footer>
-
+  <footer><div class="container">© 2026 Shara Mae Reyes • Digital Content Creator • Canva Designer • Digital Product Creator • Tutorial Specialist</div></footer>
 </body>
 </html>
