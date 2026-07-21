@@ -1,79 +1,515 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+src = Path("/mnt/data/Pasted text(83).txt")
+text = src.read_text(encoding="utf-8")
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Shara Mae Reyes, a Digital Content Creator specializing in Canva design, digital products, educational resources, software tutorials, documentation, and commercial visual content." />
+  <meta name="description" content="Portfolio of Shara Mae Reyes, a Digital Content Creator specializing in software tutorials, documentation, Canva design, digital products, commercial visuals, and creative production." />
+  <meta name="theme-color" content="#0b1020" />
   <title>Shara Mae Reyes | Digital Content Creator</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    :root {
-      --primary:#7357e8;
-      --primary-dark:#5a3ed0;
-      --secondary:#f0ecff;
-      --accent:#fff0f6;
-      --background:#fbfafc;
+    :root{
+      --navy:#0b1020;
+      --navy-soft:#121a31;
+      --navy-card:#151f39;
+      --primary:#7c5cff;
+      --primary-dark:#6041ef;
+      --cyan:#36d1dc;
+      --pink:#ff66b3;
+      --gold:#ffcf70;
+      --background:#f6f8fc;
       --surface:#ffffff;
-      --text:#24212a;
-      --muted:#6f6877;
-      --border:#e9e3ef;
-      --shadow:0 18px 50px rgba(59,41,76,.10);
-      --shadow-soft:0 8px 26px rgba(59,41,76,.06);
-      --radius:22px;
+      --surface-soft:#eef2ff;
+      --text:#10182a;
+      --muted:#667085;
+      --border:#e4e8f1;
+      --white:#ffffff;
+      --shadow:0 24px 70px rgba(15,23,42,.14);
+      --shadow-soft:0 12px 34px rgba(15,23,42,.08);
+      --radius:24px;
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:"Inter",sans-serif;background:var(--background);color:var(--text);line-height:1.7}
+    body{
+      font-family:"Inter",sans-serif;
+      background:var(--background);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+    body::selection{background:#dcd5ff;color:#17122f}
     a{color:inherit}
     img{max-width:100%;display:block}
-    .container{width:min(1160px,calc(100% - 40px));margin:auto}
-    nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-    .nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .logo{font-size:1.05rem;font-weight:800;text-decoration:none;letter-spacing:-.02em}.logo span{color:var(--primary)}
-    .nav-links{display:flex;align-items:center;gap:24px}.nav-links a{text-decoration:none;color:var(--muted);font-size:.91rem;font-weight:700}.nav-links a:hover{color:var(--primary)}
-    .hero{padding:92px 0 78px;background:radial-gradient(circle at 12% 15%,#ece6ff 0,transparent 31%),radial-gradient(circle at 89% 20%,#ffe8f2 0,transparent 27%)}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:54px}
-    .eyebrow{display:inline-block;margin-bottom:20px;padding:8px 15px;border-radius:999px;background:var(--secondary);color:var(--primary-dark);font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-    h1{font-size:clamp(2.8rem,6vw,5.25rem);line-height:1.03;letter-spacing:-.06em;max-width:760px}
-    .gradient-text{color:var(--primary)}
-    .hero-description{max-width:720px;margin-top:25px;color:var(--muted);font-size:1.08rem}
-    .hero-details{margin-top:17px;color:var(--muted);font-size:.94rem}
-    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-    .button{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:11px;text-decoration:none;font-weight:800;transition:.2s ease}
-    .button-primary{background:var(--primary);color:white;box-shadow:0 9px 24px rgba(115,87,232,.28)}.button-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
-    .button-secondary{background:white;border:1px solid var(--border)}.button-secondary:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
-    .hero-panel{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
-    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-    .mini-card{min-height:135px;padding:20px;border-radius:18px;border:1px solid var(--border);background:white;display:flex;flex-direction:column;justify-content:space-between}
-    .mini-card:nth-child(2){background:#fff7fb}.mini-card:nth-child(3){background:#f6f3ff}.mini-card:nth-child(4){background:#f8fbff}
-    .mini-icon{font-size:1.85rem}.mini-card strong{font-size:.96rem}.mini-card span{color:var(--muted);font-size:.78rem}
-    section{padding:80px 0}.alt{background:#f7f4fa}
-    .section-heading{max-width:780px;margin-bottom:36px}.section-label{margin-bottom:8px;color:var(--primary);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.15;letter-spacing:-.04em}.section-description{margin-top:13px;color:var(--muted)}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-32px;position:relative;z-index:2}
-    .stat{background:white;border:1px solid var(--border);border-radius:18px;padding:24px;text-align:center;box-shadow:var(--shadow-soft)}
-    .stat strong{display:block;color:var(--primary);font-size:1.8rem;line-height:1.1}.stat span{display:block;margin-top:7px;color:var(--muted);font-size:.88rem}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(11,16,32,.9);
+      border-bottom:1px solid rgba(255,255,255,.09);
+      backdrop-filter:blur(18px);
+    }
+    .nav-inner{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .logo{
+      color:white;
+      font-family:"Manrope",sans-serif;
+      font-size:1.08rem;
+      font-weight:800;
+      text-decoration:none;
+      letter-spacing:-.03em;
+    }
+    .logo span{
+      background:linear-gradient(90deg,var(--cyan),#9b8cff,var(--pink));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{
+      text-decoration:none;
+      color:#c7cede;
+      font-size:.9rem;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{color:white}
+    .nav-contact{
+      padding:10px 15px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),var(--cyan));
+      color:white!important;
+    }
+
+    .hero{
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
+      padding:105px 0 105px;
+      background:
+        radial-gradient(circle at 10% 20%,rgba(124,92,255,.32) 0,transparent 30%),
+        radial-gradient(circle at 90% 18%,rgba(54,209,220,.22) 0,transparent 25%),
+        radial-gradient(circle at 78% 80%,rgba(255,102,179,.16) 0,transparent 28%),
+        linear-gradient(135deg,#080d1b 0%,#10182d 55%,#0c1223 100%);
+      color:white;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      opacity:.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:48px 48px;
+      mask-image:linear-gradient(to bottom,black,transparent 85%);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      align-items:center;
+      gap:60px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      margin-bottom:21px;
+      padding:9px 15px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.07);
+      color:#dbe4ff;
+      font-size:.8rem;
+      font-weight:800;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--cyan);
+      box-shadow:0 0 18px var(--cyan);
+    }
+    h1{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(3rem,6vw,5.5rem);
+      line-height:1.01;
+      letter-spacing:-.065em;
+      max-width:780px;
+    }
+    .gradient-text{
+      background:linear-gradient(90deg,#ffffff 0%,#9b8cff 32%,#36d1dc 68%,#ff83c4 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero-description{
+      max-width:730px;
+      margin-top:27px;
+      color:#bdc7da;
+      font-size:1.08rem;
+    }
+    .hero-details{
+      margin-top:18px;
+      color:#8f9bb2;
+      font-size:.94rem;
+    }
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:31px;
+    }
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:13px 22px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:800;
+      transition:.22s ease;
+    }
+    .button-primary{
+      background:linear-gradient(135deg,var(--primary),var(--cyan));
+      color:white;
+      box-shadow:0 12px 28px rgba(90,75,255,.32);
+    }
+    .button-primary:hover{transform:translateY(-3px);filter:brightness(1.06)}
+    .button-secondary{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      color:white;
+    }
+    .button-secondary:hover{
+      background:rgba(255,255,255,.14);
+      transform:translateY(-3px);
+    }
+
+    .hero-panel{
+      position:relative;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      padding:24px;
+      background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.05));
+      box-shadow:0 30px 80px rgba(0,0,0,.28);
+      backdrop-filter:blur(12px);
+    }
+    .hero-panel::after{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      right:-25px;
+      bottom:-35px;
+      border-radius:50%;
+      background:rgba(54,209,220,.22);
+      filter:blur(30px);
+      z-index:-1;
+    }
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .mini-card{
+      min-height:150px;
+      padding:21px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.075);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:.22s ease;
+    }
+    .mini-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.11)}
+    .mini-card:nth-child(1){box-shadow:inset 0 0 0 1px rgba(54,209,220,.05)}
+    .mini-card:nth-child(2){box-shadow:inset 0 0 0 1px rgba(124,92,255,.08)}
+    .mini-card:nth-child(3){box-shadow:inset 0 0 0 1px rgba(255,102,179,.06)}
+    .mini-card:nth-child(4){box-shadow:inset 0 0 0 1px rgba(255,207,112,.06)}
+    .mini-icon{font-size:2rem}
+    .mini-card strong{font-size:.98rem;color:white}
+    .mini-card span{color:#aab6cb;font-size:.79rem}
+
+    section{padding:86px 0}
+    .alt{background:#edf1f8}
+    .section-heading{max-width:820px;margin-bottom:38px}
+    .section-label{
+      margin-bottom:8px;
+      color:var(--primary-dark);
+      font-size:.77rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    h2{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2.05rem,4vw,3.05rem);
+      line-height:1.13;
+      letter-spacing:-.045em;
+    }
+    .section-description{margin-top:14px;color:var(--muted)}
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:-38px;
+      position:relative;
+      z-index:5;
+    }
+    .stat{
+      position:relative;
+      overflow:hidden;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:27px 22px;
+      text-align:center;
+      box-shadow:var(--shadow-soft);
+    }
+    .stat::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg,var(--primary),var(--cyan),var(--pink));
+    }
+    .stat strong{
+      display:block;
+      font-family:"Manrope",sans-serif;
+      color:var(--primary-dark);
+      font-size:1.95rem;
+      line-height:1.1;
+    }
+    .stat span{
+      display:block;
+      margin-top:8px;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+
     .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    .project-card{display:flex;flex-direction:column;min-height:280px;padding:30px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-soft);transition:.22s ease}
-    .project-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-    .project-card.featured{grid-column:span 2;background:linear-gradient(135deg,#ffffff,#f5f1ff)}
-    .project-top{display:flex;align-items:center;justify-content:space-between;gap:15px}.project-icon{font-size:2.15rem}.project-tag{padding:7px 11px;border-radius:999px;background:var(--secondary);color:var(--primary-dark);font-size:.75rem;font-weight:800}
-    .project-card h3{font-size:1.35rem;margin-top:25px;letter-spacing:-.025em}.project-card p{margin-top:10px;color:var(--muted)}
-    .project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:24px}.text-link{text-decoration:none;color:var(--primary);font-weight:800}.text-link:hover{text-decoration:underline}
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{height:100%;padding:28px;background:white;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-soft)}
-    .card-icon{font-size:1.9rem;margin-bottom:17px}.card h3{margin-bottom:10px;font-size:1.13rem}.card p{color:var(--muted);font-size:.93rem}
-    .skill-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill-group{padding:23px;background:white;border:1px solid var(--border);border-radius:18px}.skill-group h3{font-size:1rem;margin-bottom:14px}.skill-group ul{list-style:none}.skill-group li{padding:5px 0;color:var(--muted);font-size:.9rem}
-    .experience-list{display:grid;gap:14px}.experience-item{display:flex;gap:14px;padding:20px 22px;background:white;border:1px solid var(--border);border-radius:14px}.check{flex:0 0 auto;display:grid;width:28px;height:28px;place-items:center;border-radius:50%;background:var(--secondary);color:var(--primary);font-weight:900}.experience-item p{color:var(--muted)}.experience-item strong{color:var(--text)}
-    .tags{display:flex;flex-wrap:wrap;gap:10px}.tag{padding:9px 13px;border:1px solid var(--border);border-radius:999px;background:white;color:#4f4956;font-size:.87rem;font-weight:700}
-    .contact-card{padding:58px 38px;border-radius:28px;text-align:center;color:white;background:linear-gradient(135deg,#795ce9,#593ad0);box-shadow:0 20px 48px rgba(87,57,190,.26)}
-    .contact-card h2{max-width:760px;margin:auto}.contact-card p{max-width:680px;margin:16px auto 0;color:rgba(255,255,255,.87)}.contact-card .hero-buttons{justify-content:center}.contact-card .button-secondary{border:0}
-    footer{padding:30px 0 42px;text-align:center;color:var(--muted);font-size:.88rem}
-    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-panel{max-width:650px}.service-grid{grid-template-columns:repeat(2,1fr)}.skill-groups{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.nav-links a:not(.nav-contact){display:none}}
-    @media(max-width:620px){.container{width:min(100% - 24px,1160px)}.hero{padding:66px 0 56px}section{padding:60px 0}.mini-grid,.project-grid,.service-grid,.skill-groups,.stats{grid-template-columns:1fr}.project-card.featured{grid-column:span 1}.hero-buttons{flex-direction:column}.button{width:100%}.contact-card{padding:44px 20px}}
+    .project-card{
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:290px;
+      padding:31px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:var(--surface);
+      box-shadow:var(--shadow-soft);
+      transition:.22s ease;
+    }
+    .project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .project-card.featured{
+      grid-column:span 2;
+      min-height:310px;
+      background:
+        radial-gradient(circle at 88% 20%,rgba(54,209,220,.16),transparent 28%),
+        radial-gradient(circle at 73% 85%,rgba(124,92,255,.17),transparent 30%),
+        linear-gradient(135deg,#ffffff,#eef2ff);
+    }
+    .project-card.featured::after{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border:1px solid rgba(124,92,255,.12);
+      border-radius:50%;
+      right:-70px;
+      top:-70px;
+    }
+    .project-top{display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .project-icon{font-size:2.2rem}
+    .project-tag{
+      padding:7px 12px;
+      border-radius:999px;
+      background:#ece8ff;
+      color:#563bc9;
+      font-size:.74rem;
+      font-weight:800;
+    }
+    .project-card h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1.42rem;
+      margin-top:26px;
+      letter-spacing:-.03em;
+    }
+    .project-card p{margin-top:10px;color:var(--muted)}
+    .project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:25px}
+    .text-link{text-decoration:none;color:var(--primary-dark);font-weight:800}
+    .text-link:hover{text-decoration:underline}
+
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{
+      height:100%;
+      padding:29px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+      transition:.22s ease;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .card-icon{font-size:1.95rem;margin-bottom:18px}
+    .card h3{margin-bottom:10px;font-family:"Manrope",sans-serif;font-size:1.14rem}
+    .card p{color:var(--muted);font-size:.93rem}
+
+    .skill-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .skill-group{
+      padding:24px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:19px;
+      box-shadow:var(--shadow-soft);
+    }
+    .skill-group h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1rem;
+      margin-bottom:14px;
+      color:var(--primary-dark);
+    }
+    .skill-group ul{list-style:none}
+    .skill-group li{
+      position:relative;
+      padding:6px 0 6px 17px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .skill-group li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:14px;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--primary),var(--cyan));
+    }
+
+    .experience-list{display:grid;gap:15px}
+    .experience-item{
+      display:flex;
+      gap:15px;
+      padding:21px 23px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:15px;
+      box-shadow:0 6px 18px rgba(15,23,42,.04);
+    }
+    .check{
+      flex:0 0 auto;
+      display:grid;
+      width:30px;
+      height:30px;
+      place-items:center;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--primary),var(--cyan));
+      color:white;
+      font-weight:900;
+      box-shadow:0 6px 14px rgba(91,74,255,.22);
+    }
+    .experience-item p{color:var(--muted)}
+    .experience-item strong{color:var(--text)}
+
+    .tags{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{
+      padding:10px 14px;
+      border:1px solid #dbe1ec;
+      border-radius:999px;
+      background:white;
+      color:#3e4758;
+      font-size:.86rem;
+      font-weight:700;
+      box-shadow:0 4px 12px rgba(15,23,42,.04);
+    }
+
+    .contact-card{
+      position:relative;
+      overflow:hidden;
+      padding:64px 40px;
+      border-radius:30px;
+      text-align:center;
+      color:white;
+      background:
+        radial-gradient(circle at 12% 12%,rgba(54,209,220,.26),transparent 26%),
+        radial-gradient(circle at 90% 85%,rgba(255,102,179,.24),transparent 28%),
+        linear-gradient(135deg,#0c1328 0%,#251a58 52%,#0d1c36 100%);
+      box-shadow:0 28px 68px rgba(22,21,60,.28);
+    }
+    .contact-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:42px 42px;
+      opacity:.35;
+      pointer-events:none;
+    }
+    .contact-card>*{position:relative;z-index:1}
+    .contact-card h2{max-width:790px;margin:auto}
+    .contact-card p{max-width:700px;margin:16px auto 0;color:rgba(255,255,255,.8)}
+    .contact-card .hero-buttons{justify-content:center}
+    .contact-card .button-secondary{
+      border:1px solid rgba(255,255,255,.2);
+      background:white;
+      color:#111827;
+    }
+
+    footer{
+      padding:31px 0 43px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.87rem;
+    }
+
+    @media(max-width:940px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-panel{max-width:720px}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .skill-groups{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .nav-links a:not(.nav-contact){display:none}
+    }
+
+    @media(max-width:640px){
+      .container{width:min(100% - 24px,1180px)}
+      .hero{padding:72px 0 64px}
+      section{padding:64px 0}
+      .mini-grid,.project-grid,.service-grid,.skill-groups,.stats{grid-template-columns:1fr}
+      .project-card.featured{grid-column:span 1}
+      .hero-buttons{flex-direction:column}
+      .button{width:100%}
+      .contact-card{padding:48px 21px}
+      .nav-inner{min-height:68px}
+      .nav-contact{padding:9px 12px}
+    }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="container nav-inner">
@@ -92,21 +528,46 @@
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">Digital Content Creator</span>
-        <h1>Ideas turned into <span class="gradient-text">useful digital content.</span></h1>
-        <p class="hero-description">I create Canva designs, educational workbooks, printable resources, commercial product visuals, software tutorials, and step-by-step documentation for businesses, creators, and online brands.</p>
-        <p class="hero-details">Based in the Philippines • Available for remote, part-time, full-time, and project-based opportunities</p>
+        <h1>Creative content built to <span class="gradient-text">inform, engage, and convert.</span></h1>
+
+        <p class="hero-description">
+          I create high-quality software tutorials, step-by-step documentation, Canva designs,
+          commercial visuals, digital products, and educational resources for businesses,
+          creators, SaaS teams, and online brands.
+        </p>
+
+        <p class="hero-details">
+          Based in the Philippines • Available for remote, part-time, full-time, and project-based opportunities
+        </p>
+
         <div class="hero-buttons">
           <a href="#work" class="button button-primary">View My Work</a>
           <a href="Reyes,%20Shara%20Mae%20L.%20Resume.pdf" target="_blank" class="button button-secondary">View Resume</a>
           <a href="mailto:shrmreyes@gmail.com" class="button button-secondary">Contact Me</a>
         </div>
       </div>
+
       <div class="hero-panel" aria-label="Creative work overview">
         <div class="mini-grid">
-          <div class="mini-card"><div class="mini-icon">📚</div><div><strong>Educational Products</strong><br><span>Workbooks, phonics, activities</span></div></div>
-          <div class="mini-card"><div class="mini-icon">🎨</div><div><strong>Canva Design</strong><br><span>Layouts, presentations, printables</span></div></div>
-          <div class="mini-card"><div class="mini-icon">💻</div><div><strong>Tutorial Content</strong><br><span>Screen recordings and guides</span></div></div>
-          <div class="mini-card"><div class="mini-icon">📸</div><div><strong>Commercial Visuals</strong><br><span>Product and lifestyle content</span></div></div>
+          <div class="mini-card">
+            <div class="mini-icon">💻</div>
+            <div><strong>Software Tutorials</strong><br><span>Screen recordings, guides, workflows</span></div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-icon">🎨</div>
+            <div><strong>Canva Design</strong><br><span>Presentations, layouts, marketing assets</span></div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-icon">📸</div>
+            <div><strong>Commercial Visuals</strong><br><span>eCommerce, product, and lifestyle content</span></div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-icon">📚</div>
+            <div><strong>Digital Products</strong><br><span>Educational, printable, and creative resources</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -114,56 +575,124 @@
 
   <main>
     <div class="container stats" aria-label="Portfolio highlights">
-      <div class="stat"><strong>100+</strong><span>Educational pages created</span></div>
-      <div class="stat"><strong>5+</strong><span>Software platforms documented</span></div>
-      <div class="stat"><strong>3</strong><span>Kids workbook collections</span></div>
-      <div class="stat"><strong>Multi-skill</strong><span>Design, tutorials, visuals, and content</span></div>
+      <div class="stat"><strong>2,000+</strong><span>Software Tutorials Created</span></div>
+      <div class="stat"><strong>100+</strong><span>Software Features Documented</span></div>
+      <div class="stat"><strong>100+</strong><span>Digital Assets Created</span></div>
+      <div class="stat"><strong>Multi-Skill</strong><span>Content, Design, Documentation & Visuals</span></div>
     </div>
 
     <section id="work">
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Featured Work</p>
-          <h2>Selected projects across design, education, tutorials, and visual content</h2>
-          <p class="section-description">Explore complete project collections based on the type of work most relevant to your needs.</p>
+          <h2>Selected projects across tutorials, design, digital products, and visual content</h2>
+          <p class="section-description">
+            Explore project collections that represent my experience in creative production,
+            software documentation, Canva design, commercial visuals, and educational content.
+          </p>
         </div>
 
         <div class="project-grid">
           <article class="project-card featured">
-            <div class="project-top"><span class="project-icon">✨</span><span class="project-tag">Main Portfolio</span></div>
+            <div class="project-top">
+              <span class="project-icon">✨</span>
+              <span class="project-tag">Main Portfolio</span>
+            </div>
             <h3>Creative Content Portfolio</h3>
-            <p>A curated collection of commercial product visuals, Canva designs, educational printables, digital products, and tutorial content.</p>
+            <p>
+              A curated collection of commercial product visuals, Canva designs,
+              digital products, educational resources, and tutorial-based content.
+            </p>
             <div class="project-links">
-              <a class="button button-primary" href="https://www.canva.com/design/DAFu_x0kJXs/XvwdW3bfNZDEHlzEKCgoKw/view?utm_content=DAFu_x0kJXs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks" target="_blank" rel="noopener">Open Full Portfolio</a>
+              <a class="button button-primary"
+                 href="https://www.canva.com/design/DAFu_x0kJXs/XvwdW3bfNZDEHlzEKCgoKw/view?utm_content=DAFu_x0kJXs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks"
+                 target="_blank" rel="noopener">
+                Open Full Portfolio
+              </a>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-top"><span class="project-icon">🔤</span><span class="project-tag">Kids Education</span></div>
-            <h3>Alphabet Learning Workbook</h3>
-            <p>A child-friendly workbook designed to support letter recognition, early reading, and guided learning through clear Canva layouts.</p>
-            <div class="project-links"><a class="text-link" href="https://canva.link/yx2tl5edkh4kgsl" target="_blank" rel="noopener">View Workbook →</a></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon">🧠</span><span class="project-tag">Printable Resource</span></div>
-            <h3>Kids Activity Workbook</h3>
-            <p>An educational activity collection created for young learners, combining engaging exercises with organized and print-ready design.</p>
-            <div class="project-links"><a class="text-link" href="https://canva.link/gwkwiywtxo2p5ou" target="_blank" rel="noopener">View Workbook →</a></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon">🖍️</span><span class="project-tag">Creative Learning</span></div>
-            <h3>Children's Printable Collection</h3>
-            <p>A Canva-designed learning resource featuring kid-friendly visuals, structured pages, and content suitable for home or classroom use.</p>
-            <div class="project-links"><a class="text-link" href="https://canva.link/e91gzvz1h9n5qva" target="_blank" rel="noopener">View Collection →</a></div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon">🎥</span><span class="project-tag">Documentation</span></div>
+            <div class="project-top">
+              <span class="project-icon">🎥</span>
+              <span class="project-tag">Documentation</span>
+            </div>
             <h3>Software Tutorials & Guides</h3>
-            <p>Step-by-step tutorial production for CapCut, Webex, Pipedrive, Indeed, Zoho Books, and other digital platforms.</p>
-            <div class="project-links"><a class="text-link" href="#experience">See Experience →</a></div>
+            <p>
+              High-volume, step-by-step tutorial production for CapCut, Webex,
+              Pipedrive, Indeed, Zoho Books, and many other digital platforms.
+              Selected client work remains confidential.
+            </p>
+            <div class="project-links">
+              <a class="text-link" href="#experience">See Experience →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-icon">🎨</span>
+              <span class="project-tag">Creative Design</span>
+            </div>
+            <h3>Canva Designs & Digital Assets</h3>
+            <p>
+              Presentations, printable layouts, portfolio pages, marketing graphics,
+              social content, and organized digital assets for different audiences.
+            </p>
+            <div class="project-links">
+              <a class="text-link"
+                 href="https://www.canva.com/design/DAFu_x0kJXs/XvwdW3bfNZDEHlzEKCgoKw/view?utm_content=DAFu_x0kJXs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks"
+                 target="_blank" rel="noopener">
+                View Designs →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-icon">🔤</span>
+              <span class="project-tag">Kids Education</span>
+            </div>
+            <h3>Alphabet Learning Workbook</h3>
+            <p>
+              A child-friendly workbook designed to support letter recognition,
+              early reading, and guided learning through clear Canva layouts.
+            </p>
+            <div class="project-links">
+              <a class="text-link" href="https://canva.link/yx2tl5edkh4kgsl"
+                 target="_blank" rel="noopener">View Workbook →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-icon">🧠</span>
+              <span class="project-tag">Printable Resource</span>
+            </div>
+            <h3>Kids Activity Workbook</h3>
+            <p>
+              An educational activity collection for young learners, combining
+              engaging exercises with organized and print-ready design.
+            </p>
+            <div class="project-links">
+              <a class="text-link" href="https://canva.link/gwkwiywtxo2p5ou"
+                 target="_blank" rel="noopener">View Workbook →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-icon">🖍️</span>
+              <span class="project-tag">Creative Learning</span>
+            </div>
+            <h3>Children's Printable Collection</h3>
+            <p>
+              A Canva-designed resource featuring kid-friendly visuals, structured
+              pages, and content suitable for home or classroom use.
+            </p>
+            <div class="project-links">
+              <a class="text-link" href="https://canva.link/e91gzvz1h9n5qva"
+                 target="_blank" rel="noopener">View Collection →</a>
+            </div>
           </article>
         </div>
       </div>
@@ -173,50 +702,198 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-label">Services</p>
-          <h2>Creative production for brands, teams, and educational projects</h2>
-          <p class="section-description">From first concept to organized final files, I support structured and repeatable digital content production.</p>
+          <h2>Creative production for brands, teams, SaaS companies, and educational projects</h2>
+          <p class="section-description">
+            From research and content planning to organized final files,
+            I support reliable, repeatable, and high-quality digital production.
+          </p>
         </div>
+
         <div class="service-grid">
-          <article class="card"><div class="card-icon">📚</div><h3>Educational Digital Products</h3><p>Workbooks, alphabet and phonics materials, activity sheets, coloring pages, and downloadable learning resources.</p></article>
-          <article class="card"><div class="card-icon">🎨</div><h3>Canva Design</h3><p>Presentations, printable layouts, portfolio pages, social content, thumbnails, product materials, and branded assets.</p></article>
-          <article class="card"><div class="card-icon">💻</div><h3>Software Tutorials</h3><p>Clear screen-recorded tutorials for websites, apps, and business tools, including research, recording, and basic editing.</p></article>
-          <article class="card"><div class="card-icon">📄</div><h3>Documentation & Guides</h3><p>Step-by-step instructions, SOPs, knowledge-base content, user guides, and structured written documentation.</p></article>
-          <article class="card"><div class="card-icon">📸</div><h3>Commercial Visual Content</h3><p>Product images, lifestyle scenes, eCommerce visuals, advertising concepts, and creative image variations.</p></article>
-          <article class="card"><div class="card-icon">🧩</div><h3>Creative Production Support</h3><p>Research, asset preparation, revisions, quality checks, file organization, and repeatable output-based workflows.</p></article>
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Software Tutorials</h3>
+            <p>Clear screen-recorded tutorials for websites, apps, business tools, and software platforms.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📄</div>
+            <h3>Documentation & Guides</h3>
+            <p>Step-by-step instructions, SOPs, knowledge-base articles, user guides, and help content.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Canva Design</h3>
+            <p>Presentations, printables, portfolio pages, marketing graphics, product materials, and branded assets.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📸</div>
+            <h3>Commercial Visual Content</h3>
+            <p>Product images, lifestyle scenes, eCommerce visuals, ad concepts, and creative image variations.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📚</div>
+            <h3>Educational Digital Products</h3>
+            <p>Workbooks, alphabet and phonics materials, worksheets, coloring pages, and learning resources.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚡</div>
+            <h3>AI-Assisted Content Production</h3>
+            <p>Efficient content creation using modern tools while maintaining quality, consistency, and brand standards.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="skills">
       <div class="container">
-        <div class="section-heading"><p class="section-label">Skills</p><h2>Creative and production capabilities</h2></div>
+        <div class="section-heading">
+          <p class="section-label">Skills</p>
+          <h2>Creative, documentation, and production capabilities</h2>
+        </div>
+
         <div class="skill-groups">
-          <div class="skill-group"><h3>Design</h3><ul><li>Canva Design</li><li>Layout Design</li><li>Presentation Design</li><li>Printable Design</li><li>Digital Product Design</li></ul></div>
-          <div class="skill-group"><h3>Content Creation</h3><ul><li>Tutorial Production</li><li>Screen Recording</li><li>Documentation</li><li>SOP Creation</li><li>Educational Content</li></ul></div>
-          <div class="skill-group"><h3>Visual Production</h3><ul><li>Product Visuals</li><li>Lifestyle Images</li><li>Image Generation</li><li>Prompt Writing</li><li>Basic Video Editing</li></ul></div>
-          <div class="skill-group"><h3>Workflow</h3><ul><li>Content Research</li><li>Quality Control</li><li>File Organization</li><li>Following Brand Guidelines</li><li>High-volume Production</li></ul></div>
+          <div class="skill-group">
+            <h3>Documentation</h3>
+            <ul>
+              <li>Software Tutorials</li>
+              <li>Technical Documentation</li>
+              <li>Knowledge Base Content</li>
+              <li>User Guides</li>
+              <li>SOP Creation</li>
+              <li>Workflow Documentation</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Design</h3>
+            <ul>
+              <li>Canva Design</li>
+              <li>Layout Design</li>
+              <li>Presentation Design</li>
+              <li>Printable Design</li>
+              <li>Digital Product Design</li>
+              <li>Marketing Assets</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Visual Production</h3>
+            <ul>
+              <li>Product Visuals</li>
+              <li>Lifestyle Images</li>
+              <li>Image Generation</li>
+              <li>Prompt Writing</li>
+              <li>Basic Video Editing</li>
+              <li>Screen Recording</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Workflow</h3>
+            <ul>
+              <li>Content Research</li>
+              <li>Quality Control</li>
+              <li>File Organization</li>
+              <li>Brand Guidelines</li>
+              <li>High-Volume Production</li>
+              <li>Deadline Management</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="alt">
       <div class="container">
-        <div class="section-heading"><p class="section-label">Tools</p><h2>Platforms I work with</h2></div>
+        <div class="section-heading">
+          <p class="section-label">Tools</p>
+          <h2>Platforms and creative tools I work with</h2>
+        </div>
+
         <div class="tags">
-          <span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag">OBS Studio</span><span class="tag">Dubble</span><span class="tag">Google Workspace</span><span class="tag">Trello</span><span class="tag">ClickUp</span><span class="tag">Slack</span><span class="tag">Webex</span><span class="tag">Pipedrive</span><span class="tag">Zoho Books</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span><span class="tag">Nano Banana Pro</span>
+          <span class="tag">Canva</span>
+          <span class="tag">CapCut</span>
+          <span class="tag">OBS Studio</span>
+          <span class="tag">Dubble</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">Trello</span>
+          <span class="tag">ClickUp</span>
+          <span class="tag">Slack</span>
+          <span class="tag">Webex</span>
+          <span class="tag">Pipedrive</span>
+          <span class="tag">Zoho Books</span>
+          <span class="tag">Indeed</span>
+          <span class="tag">ChatGPT</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Nano Banana Pro</span>
         </div>
       </div>
     </section>
 
     <section id="experience">
       <div class="container">
-        <div class="section-heading"><p class="section-label">Experience</p><h2>Selected experience highlights</h2></div>
+        <div class="section-heading">
+          <p class="section-label">Experience</p>
+          <h2>Selected experience highlights</h2>
+          <p class="section-description">
+            Much of my tutorial and documentation work was completed for clients,
+            so only selected public samples can be shared.
+          </p>
+        </div>
+
         <div class="experience-list">
-          <div class="experience-item"><span class="check">✓</span><p>Designed more than <strong>100 pages of educational resources</strong>, including alphabet and phonics workbooks, reading activities, worksheets, and coloring pages.</p></div>
-          <div class="experience-item"><span class="check">✓</span><p>Created <strong>Canva presentations, printable materials, portfolio layouts, and digital assets</strong> for creative and educational projects.</p></div>
-          <div class="experience-item"><span class="check">✓</span><p>Produced <strong>step-by-step software tutorials and documentation</strong> for CapCut, Webex, Pipedrive, Indeed, Zoho Books, and other platforms.</p></div>
-          <div class="experience-item"><span class="check">✓</span><p>Created <strong>commercial product and lifestyle visuals</strong> using reference images, varied settings, realistic lighting, and multiple compositions.</p></div>
-          <div class="experience-item"><span class="check">✓</span><p>Experienced in researching unfamiliar tools, following detailed instructions, organizing assets, and delivering repetitive work with <strong>consistency and accuracy</strong>.</p></div>
+          <div class="experience-item">
+            <span class="check">✓</span>
+            <p>
+              Created more than <strong>2,000 software tutorials</strong> covering business applications,
+              websites, desktop software, online tools, and digital platforms.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <span class="check">✓</span>
+            <p>
+              Documented over <strong>100 software features and workflows</strong> through step-by-step guides,
+              screen recordings, written instructions, and knowledge-base content.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <span class="check">✓</span>
+            <p>
+              Produced tutorials and documentation for <strong>CapCut, Webex, Pipedrive, Indeed,
+              Zoho Books, and many other client platforms</strong>.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <span class="check">✓</span>
+            <p>
+              Designed <strong>100+ digital assets</strong>, including Canva presentations, educational resources,
+              printables, portfolio layouts, commercial visuals, and marketing materials.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <span class="check">✓</span>
+            <p>
+              Created <strong>commercial product and lifestyle visuals</strong> for eCommerce,
+              advertising concepts, digital marketing, and online content.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <span class="check">✓</span>
+            <p>
+              Experienced in high-volume production requiring <strong>consistency, quality assurance,
+              strong organization, attention to detail, and dependable turnaround times</strong>.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -224,19 +901,37 @@
     <section id="contact">
       <div class="container">
         <div class="contact-card">
-          <p class="section-label" style="color:white">Let's Work Together</p>
-          <h2>Need dependable creative support for your next project?</h2>
-          <p>Whether you need Canva designs, educational resources, commercial visuals, software tutorials, or ongoing digital content production, I would be glad to help.</p>
+          <p class="section-label" style="color:#9cecff">Let's Work Together</p>
+          <h2>Looking for a reliable Digital Content Creator?</h2>
+          <p>
+            Whether you need software tutorials, documentation, Canva designs,
+            commercial visuals, digital products, or long-term creative production support,
+            I would be glad to help bring your project to life.
+          </p>
+
           <div class="hero-buttons">
             <a href="mailto:shrmreyes@gmail.com" class="button button-secondary">Email Me</a>
             <a href="Reyes,%20Shara%20Mae%20L.%20Resume.pdf" target="_blank" class="button button-secondary">View Resume</a>
           </div>
-          <p style="margin-top:24px;font-size:.9rem">shrmreyes@gmail.com &nbsp;•&nbsp; +63 994 489 4725</p>
+
+          <p style="margin-top:25px;font-size:.9rem">
+            shrmreyes@gmail.com &nbsp;•&nbsp; +63 994 489 4725
+          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="container">© 2026 Shara Mae Reyes • Digital Content Creator • Canva Designer • Digital Product Creator • Tutorial Specialist</div></footer>
+  <footer>
+    <div class="container">
+      © 2026 Shara Mae Reyes • Digital Content Creator • Tutorial & Documentation Specialist • Canva Designer
+    </div>
+  </footer>
 </body>
 </html>
+'''
+
+out = Path("/mnt/data/index.html")
+out.write_text(html, encoding="utf-8")
+print(f"Created: {out}")
+print(f"Lines: {len(html.splitlines())}")
